@@ -1,0 +1,20 @@
+name: Test workflow dispatch from another workflow - target
+
+on:
+  workflow_dispatch:
+    inputs:
+      sandbox_environment:
+        description: Sandbox environment to deploy
+        required: true
+        type: choice
+        options:
+          - 'demo'
+          - 'next.demo'
+        default: demo
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Test echo
+        run: echo 'Selected input ${{ inputs.sandbox_environment }}'
