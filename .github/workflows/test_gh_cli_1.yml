@@ -1,6 +1,7 @@
 name: Test workflow dispatch from another workflow - source
 permissions:
   actions: write
+  contents: read
 
 on:
   workflow_dispatch:
