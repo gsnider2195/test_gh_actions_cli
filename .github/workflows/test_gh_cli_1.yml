@@ -9,10 +9,7 @@ jobs:
   call_deploy_sandbox_workflow:
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
       - name: Call test workflow test_gh_cli_2.yml
-        run: gh workflow run test_gh_cli_2.yml -f sandbox_environment=next.demo
+        run: gh workflow run gha_test_workflow_dispatch.yml -R gsnider2195/gha_digitalocean_test -f sandbox_environment=next.demo
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
