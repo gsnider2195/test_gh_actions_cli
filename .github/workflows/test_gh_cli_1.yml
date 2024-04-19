@@ -5,7 +5,7 @@ on:
 
 jobs:
   call_deploy_sandbox_workflow:
-    if: startsWith(github.event.release.tag_name, "v2.")  
+    if: startsWith(github.event.release.tag_name, 'v2.')
     runs-on: ubuntu-22.04
     steps:
       - name: Call test workflow test_gh_cli_2.yml
