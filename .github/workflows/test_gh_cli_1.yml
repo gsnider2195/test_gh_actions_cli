@@ -13,4 +13,4 @@ jobs:
       - name: Call test workflow test_gh_cli_2.yml
         run: gh workflow run gha_test_workflow_dispatch.yml -R gsnider2195/gha_digitalocean_test -f sandbox_environment=next.demo
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GHA_DIGITALOCEAN_TEST_PAT }}
